@@ -1,0 +1,815 @@
+
+body{
+ scroll-behavior: smooth;
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Lato', sans-serif;
+  overflow: hidden;
+  overflow-x: hidden;
+  
+  scroll-margin: none;
+  text-decoration: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  /* From https://css.glass */
+background: rgba(255, 24, 242, 0.08);
+
+backdrop-filter: blur(11.3px);
+-webkit-backdrop-filter: blur(11.3px);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.log{
+   float: right;
+
+}
+
+nav{
+  background-color: #ebf7b63f;
+  border-bottom: 2px solid pink;
+
+}
+.log>:nth-child(1){
+  text-decoration: none;
+  background-color: rgb(86, 158, 240);
+  border: none;
+   padding: 5px 10px 6px 10px;
+   color:white;
+   border-radius: 20px;
+  float: inline-end;
+
+
+}
+.log>:nth-child(2){
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px 6px 10px;
+  color:rgb(255, 255, 255);
+  border: 1px solid skyblue;
+}
+
+.frame1{
+
+ height: 100vh;
+
+}
+.sig1{
+  margin: 4px;
+  border-radius: 40px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(208, 0, 255);
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 20px;
+  transition: 1s;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+.sig1:hover{
+  border: 1px solid black;
+  border-radius: 40px;
+  text-decoration: none;
+  color: rgb(237, 163, 245);
+  background-color: rgb(255, 255, 255);
+  padding: 5px 10px 5px 10px;
+}
+.sig2:hover{
+  border: 1px solid black;
+  border-radius: 40px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(164, 241, 248);
+  padding: 5px 10px 5px 10px;
+  transition: 1s;
+}
+.sig2{
+  font-weight: bold;
+  cursor: pointer;
+  margin: 2px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 40px;
+  border: 1px solid  black;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+.text-styling{
+  color: #24371c;
+}
+.travel{
+  margin-left: 20px;
+  font-size: 80px;
+  text-decoration: none;
+ font-family:Georgia, 'Times New Roman', Times, serif;
+ position: absolute;
+ top: 30%;
+}
+.offer{
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 80px;
+  text-decoration: none;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ position: absolute;
+ top: 45%;
+}
+.higlite{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
+  background-color: yellow;
+  border-radius: 10px;
+}
+.booking{
+  font-size: 15px;
+  background-color: rgb(253, 206, 149);
+  padding: 10px;
+  margin-left: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+
+.ani{
+  z-index: -2;
+}
+.off{
+  width: 100%;
+
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #81818111;
+  text-align: center;
+  -webkit-text-stroke:5px rgb(234, 240, 207);
+
+  -webkit-text-fill-color: #eac5a39b;
+  font-size: 100px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-decoration: none;
+}
+.btnoffer{
+  border: none;
+  font-weight: bold;
+   padding-bottom: 20%;
+  padding: 30px;
+}
+ /* .closebtn{
+  float: right;
+  margin: 20px;
+
+ }
+ .closebt:hover{
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+ }
+.po-card{
+  backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.591);
+ width:600px;
+ height: 600px;
+  font-family: 'Courier New', Courier, monospace;
+ overflow: hidden ;
+
+background: url("img/210712231918-underscored-unidentified-commercial-airplane-flying-in-sky-during-sunset.jpg") no-repeat center;
+background-size: cover;
+border-radius: 20px;
+box-shadow: 0 200px 30px 400px rgba(255, 255, 255, 0.331);
+}
+.bl{
+  box-shadow: 0 50px 30px 100px  #cfbc93;
+
+}
+.demo{
+   font-family: serif;
+  position: absolute;
+  text-align: center;
+  font-size:20px;
+  top: 70%;
+}
+.coupe{
+  font-family: serif;
+  text-align: center;
+  font-size:20px;
+ padding-top: 20%;
+  padding: 9px;
+  text-decoration: none;
+  background-color: black;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+}
+.coupe>span{
+  border-radius: 20px;
+  background-color: #818181;
+} */
+
+.loading{
+  width: 100vw;
+  height: 100vh;
+  /* From https://css.glass */
+background: rgba(87, 87, 87, 0.603);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(14.3px);
+-webkit-backdrop-filter: blur(14.3px);
+}
+
+.frame2{
+  height: auto;
+  width: 100%;
+
+}
+#form{
+
+  width: 100%;
+}
+ form{
+
+  padding: 5%;
+  width: 100%;
+  height:auto;
+  background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.32); */
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+ }
+ form>label{
+  display:block;
+ }
+ form input{
+  border-radius: 7px;
+  height: 30px;
+  border: none;
+  background: rgba(95, 95, 95, 0.135);
+ border: 2px solid black;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.121);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+ }
+ .fromto{
+  padding-top: 2%;
+  display: block;
+
+ }
+/* form */
+
+.container {
+
+  max-width: 700px;
+  width: 100%;
+
+  padding: 25px;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+/* border-radius: 16px; */
+/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+.container header {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+.container .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: #333;
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.form :where(select) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 17px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+.form .fly-box {
+  margin-top: 20px;
+}
+.fly-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.form :where(.fly-option, .fly) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+.form .fly {
+  column-gap: 5px;
+}
+.fly input {
+  accent-color: rgb(130, 106, 251);
+}
+.form :where(.fly input, .fly label) {
+  cursor: pointer;
+}
+.fly label {
+  color: #707070;
+}
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+.form button {
+  height: 55px;
+  width: 300px;
+
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(130, 106, 251);
+}
+.form button:hover {
+  background: rgb(88, 56, 250);
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.fly-option, .fly) {
+    row-gap: 15px;
+  }
+  .form button {
+    height: 55px;
+    width: 300px;
+   margin-left: 5%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgb(130, 106, 251);
+  }
+}
+@media screen and (max-width: 500px) {
+
+  .form button {
+    transition: 1s;
+    height: 55px;
+    width: 250px;
+   margin-left: 3%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgb(130, 106, 251);
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+.form{
+  background-color: rgb(195, 252, 252);
+  border-radius: 13px;
+}
+.frame3{
+  height: 100vh;
+  width: 100%;
+  background-color: #cfbc9320;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  border-color: #818181;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slide1>h1{
+  position: absolute;
+  font-size: 50px;
+  top: 25%;
+  left: 28%;
+  font-family:   sans-serif;
+  color: rgba(69, 69, 69, 0.724);
+
+}
+.slide2>h1{
+  position: absolute;
+  font-size: 50px;
+  top: 25%;
+  left: 28%;
+ font-family: sans-serif;
+}
+.slide1>h1>button{
+
+  position:absolute;
+  padding: 0px 10px 0px 10px;
+  height: 30px;
+  font-size: 10px;
+  border-radius: 10px;
+  background-color: rgb(245, 23, 245);
+  border: none;
+  left: 25%;
+  top: 50%;
+
+}
+
+
+
+@media screen and (max-width: 670px) {
+
+body{
+
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  /* From https://css.glass */
+background: rgba(255, 24, 242, 0.08);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(11.3px);
+-webkit-backdrop-filter: blur(11.3px);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.log{
+   float: right;
+
+}
+
+nav{
+  background-color: #ebf7b63f;
+
+}
+.log>:nth-child(1){
+  text-decoration: none;
+  background-color: rgb(86, 158, 240);
+  border: none;
+   padding: 5px 10px 6px 10px;
+   color:white;
+   border-radius: 20px;
+  float: inline-end;
+
+
+}
+.log>:nth-child(2){
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px 6px 10px;
+  color:rgb(255, 255, 255);
+  border: 1px solid skyblue;
+}
+
+.frame1{
+
+ height: 100vh;
+
+}
+.sig1{
+  margin: 4px;
+  border-radius: 40px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(208, 0, 255);
+  padding: 5px 10px 5px 10px;
+  transition: 1s;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+.sig1:hover{
+  border: 1px solid black;
+  border-radius: 40px;
+  text-decoration: none;
+  color: rgb(237, 163, 245);
+  background-color: rgb(255, 255, 255);
+  padding: 5px 10px 5px 10px;
+}
+.sig2:hover{
+  border: 1px solid black;
+  border-radius: 40px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(164, 241, 248);
+  padding: 5px 10px 5px 10px;
+  transition: 1s;
+}
+.sig2{
+  font-weight: bold;
+  cursor: pointer;
+  margin: 2px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 40px;
+  border: 1px solid  black;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+.text-styling{
+  color: #24371c;
+}
+.travel{
+  margin-left: 20px;
+  font-size: 80px;
+  text-decoration: none;
+ font-family:Georgia, 'Times New Roman', Times, serif;
+ position: absolute;
+ top: 30%;
+}
+.offer{
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 80px;
+  text-decoration: none;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ position: absolute;
+ top: 45%;
+}
+.higlite{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
+  background-color: yellow;
+  border-radius: 10px;
+}
+.booking{
+  font-size: 15px;
+  background-color: rgb(253, 206, 149);
+  padding: 10px;
+  margin-left: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.ani{
+  z-index: -2;
+}
+ .closebtn{
+  float: right;
+  margin: 20px;
+ }
+.po-card{
+ width:500px;
+ height: 600px;
+  font-family: 'Courier New', Courier, monospace;
+ overflow: hidden ;
+ /* From https://css.glass */
+background: url("img/cardbg.jpg") no-repeat center;
+background-size: cover;
+border-radius: 20px;
+
+
+}
+}
+@media screen and (max-width: 480px) {
+  body{
+    margin: 0px;
+    padding: 0px;
+
+
+  }
+  .text-styling{
+    color: #2c3347;
+
+  }
+  .travel{
+    margin-left: 5px;
+
+    font-size: 80px;
+    text-decoration: none;
+  font-family: 'roboro';
+    position: absolute;
+    top: 20%;
+    background: rgba(255, 24, 243, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
+    backdrop-filter: blur(11.3px);
+    -webkit-backdrop-filter: blur(11.3px);
+    overflow-x: hidden;
+  }
+  .offer{
+    margin-left: 5px;
+    font-size: 80px;
+    text-decoration: none;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   position: absolute;
+   top: 35%;
+
+    overflow-x: hidden;
+  }
+  .higlite{
+    background-color:blanchedalmond;
+    border-radius: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+  }
+  .para{
+    color: #818181;
+    font-family: 'Roboto', sans-serif;
+     text-align: justify;
+  }
+  .booking{
+    font-size: 15px;
+    background-color: rgb(253, 206, 149);
+    padding: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    overflow-x: hidden;
+  }
+  .ani{
+    display: none;
+  }
+
+
+  .closebtn{
+    float: right;
+    margin: 20px;
+   }
+  .po-card{
+   width:300px;
+   height: 500px;
+    font-family: 'Courier New', Courier, monospace;
+   overflow: hidden ;
+   /* From https://css.glass */
+  background: url("img/cardbg.jpg") no-repeat center;
+  background-size: cover;
+  border-radius: 20px;
+
+
+  }
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/signup</title>
+</head>
+<body>
+     
+    <div class="wrapper">
+  
+        <div class="title-text">
+          <div class="title login"  style="color:white ;">Login Form</div>
+          <div class="title signup"  style="color:white ;">Signup Form</div>
+        </div>
+        <div class="form-container">
+          <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Signup</label>
+            <div class="slider-tab"></div>
+          </div>
+          <div class="form-inner">
+           
+            <form action="#" class="login">
+              <div class="field">
+                <input type="text" placeholder="Email Address" id="email" required>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Password" id="password" required>
+              </div>
+              <div class="pass-link"><a href="#">Forgot password?</a></div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login" class="submit" onclick="check()">
+              </div>
+              <div class="signup-link">Not a member? <a href="">Signup now</a></div>
+            </form>
+            <form action="#" class="signup">
+              <div class="field">
+                <input type="text" placeholder="Email Address" id="sign-email" required>
+                <a class="alt"></a>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Password" id="sign-pwd1" required>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Confirm password" id="sign-pwd-check" required>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" onclick="sigup()" value="Signup">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+      <style>
+         @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  /* background: -webkit-linear-gradient(left, #003366,#004080,#0059b3
+, #0073e6); */
+/* background: conic-gradient(from 270deg at 50% 50%, rgba(0, 0, 0, 0.59) 0deg, rgba(99, 99, 99, 0) 360deg); */
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M137.54 0C139.09 0.02 138.46 1.92 140 1.92C163.03 1.92 163.32 0.32 186.67 0C233.32 -0.64 233.34 0 280 0C290 0 290.15 -1.62 300 0C360.15 9.89 369.81 -6.84 420 23.01C487.51 63.16 508.49 70.81 535.41 140C558.49 199.3 510.85 217.79 520 280C523.14 301.34 537.22 300.28 560 307.1C627.22 327.21 630.02 333.96 700 333.85C770.02 333.74 773.44 327.51 840 306.67C859.44 300.58 865.79 298.92 872 280C893.14 215.58 903.38 206.81 894.69 140C887.38 83.78 865.71 33.94 840 33.94C815.03 33.94 822.97 90.61 793.33 140C752.97 207.27 749.37 267.27 700 267.27C647.15 267.27 588.89 199.16 588.89 140C588.89 89.47 639.82 86.51 700 47.89C748.9 16.51 752.41 18.69 807.06 0C822.41 -5.25 823.53 0 840 0C910 0 910 0 980 0C1022 0 1033.13 -19.97 1064 0C1103.13 25.32 1081.36 89.41 1120 90.59C1179.36 92.39 1191.07 3.64 1260 5.96C1331.07 8.35 1330.4 52.4 1400 100C1428.4 119.42 1424.91 126.88 1456 140C1494.91 156.42 1522.53 129.97 1540 159.09C1564.53 199.97 1540 219.55 1540 280C1540 350 1540 350 1540 420C1540 439.09 1554.22 448.91 1540 458.18C1484.22 494.56 1461.82 474.61 1400 511.3C1376.04 525.52 1392.85 551.51 1368.45 560C1322.85 575.86 1314.22 560 1260 560C1190 560 1190 560 1120 560C1050 560 1050 560 980 560C910 560 910 560 840 560C770 560 770 560 700 560C630 560 630 560 560 560C490 560 490 560 420 560C350 560 350 560 280 560C210 560 210 560 140 560C70 560 35 595 0 560C-35 525 0 490 0 420C0 350 0 350 0 280C0 210 0 210 0 140C0 70 -34.69 35.31 0 0C34.08 -34.69 69.09 -0.94 137.54 0' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M280 203.64C257.71 203.64 240 244.62 240 280C240 303.8 258.58 322 280 322C304.83 322 332.5 304.88 332.5 280C332.5 245.7 303.96 203.64 280 203.64' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M140 374.03C120.95 374.03 105.78 397.01 105.78 420C105.78 442.99 120.95 465.97 140 465.97C162.12 465.97 188.13 442.99 188.13 420C188.13 397.01 162.12 374.03 140 374.03' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M980 382.16C959.04 382.16 948.18 401.08 948.18 420C948.18 438.92 959.04 457.84 980 457.84C1026.8 457.84 1083.7 438.92 1083.7 420C1083.7 401.08 1026.8 382.16 980 382.16' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M1260 366.15C1216.94 366.15 1164.55 398.08 1164.55 420C1164.55 440.01 1214.29 450 1260 450C1285.35 450 1306.67 438.35 1306.67 420C1306.67 396.43 1288 366.15 1260 366.15' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M310.43 140C313.59 94.68 369.2 70.96 420 70.96C458.04 70.96 484.83 98.82 488.11 140C493.16 203.34 454.18 208.03 436.67 280C420.12 348.03 427.82 420 420 420C412.19 420 430.3 343.58 405.42 280C375.52 203.58 306.3 199.2 310.43 140' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M644.44 140C644.44 114.73 673.22 93.95 700 93.95C724.33 93.95 746.67 115.11 746.67 140C746.67 169.96 724.69 203.64 700 203.64C673.57 203.64 644.44 169.58 644.44 140' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M949.38 140C952.66 70.48 923.59 53.1 935.2 0C938.9 -16.9 957.6 0 980 0C990.18 0 996.01 -8.39 1000.36 0C1032.3 61.61 1012.83 82.27 1052.59 140C1072.65 169.12 1087.01 173.7 1120 173.7C1148.29 173.7 1148.27 157.91 1175.15 140C1218.27 111.27 1218.77 80.43 1260 80.43C1297.09 80.43 1294.31 112.38 1331.79 140C1364.31 163.97 1362.35 170.57 1400 183.61C1466.45 206.63 1492.55 179.45 1540 212.12C1562.55 227.64 1540 246.06 1540 280C1540 321.48 1562.48 335.37 1540 362.96C1505.44 405.37 1482.58 390.76 1425.93 420C1412.58 426.89 1412.03 435.22 1400 435.22C1391.29 435.22 1391.63 428.16 1384.44 420C1323.26 350.55 1323.08 350.51 1263.26 280C1260.86 277.17 1261.64 273.33 1260 273.33C1258.35 273.33 1259.65 277.79 1256.67 280C1189.65 329.77 1193.9 362.64 1120 377.29C1055.56 390.07 1044.05 366.33 980 334.86C945.05 317.69 927.49 314.96 922 280C912.18 217.53 946.06 210.48 949.38 140' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M739.67 420C764.6 370.46 793.22 348.33 840 348.33C877.59 348.33 875.43 383.06 908.41 420C945.43 461.47 936.22 473.05 980 505.14C1031.72 543.05 1099.41 545.63 1099.41 560C1099.41 573.06 1039.7 560 980 560C910 560 910 560 840 560C786.74 560 755.14 590.23 733.48 560C704.98 520.23 711.34 476.3 739.67 420' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M1140 560C1140 544.16 1204.98 500 1260 500C1294.55 500 1319.15 542.37 1319.15 560C1319.15 572.37 1289.57 560 1260 560C1200 560 1140 574.16 1140 560' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M91.11 140C91.11 113.26 115.04 97.81 140 97.81C166.5 97.81 194.04 112.5 194.04 140C194.04 190.63 165.95 254.07 140 254.07C114.49 254.07 91.11 191.39 91.11 140' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M14.74 0C14.74 5.46 4.16 17.87 0 17.87C-3.21 17.87 -4.04 4.9 0 0C3.33 -4.04 14.74 -3.47 14.74 0' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M386.52 140C386.52 125.92 404.48 118.9 420 118.9C431.62 118.9 440.81 127.44 440.81 140C440.81 162.83 432.85 189.68 420 189.68C405.71 189.68 386.52 161.31 386.52 140' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M0 252.55C36.4 252.55 87.92 247.65 93.33 280C101.92 331.37 36.05 347.57 28 420C20.49 487.57 72 511.11 62.22 560C58 581.11 9.57 581.54 0 560C-21.54 511.54 0 490 0 420C0 350 0 350 0 280C0 266.27 -10.27 252.55 0 252.55' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M972 280C972 262.58 964.15 247.11 980 242.67C1038.15 226.37 1054.79 225.93 1120 238.52C1151.46 244.59 1173.33 259.82 1173.33 280C1173.33 299.55 1150.32 316.78 1120 317.97C1053.65 320.57 1048.72 305.2 980 287.57C974.72 286.21 972 285.03 972 280' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M1344.65 280C1344.65 257.07 1368.47 243.38 1400 240.98C1466.15 235.95 1476.62 247.49 1540 265.15C1546.62 267 1540 272.58 1540 280C1540 289.08 1547.67 294.62 1540 298.15C1477.67 326.78 1461.99 350.08 1400 344.32C1364.32 341 1344.65 308.74 1344.65 280' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M798 420C802.09 397.16 820.42 390 840 390C855.74 390 855.11 404.3 868.64 420C925.11 485.51 922.15 489.07 980 552.43C986.06 559.07 996.47 558.02 996.47 560C996.47 561.8 988.24 560 980 560C910 560 910 560 840 560C824.79 560 813.31 572.46 809.57 560C792.31 502.46 786.87 482.16 798 420' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M375.45 560C375.45 551.61 396.27 529.38 420 529.38C453.54 529.38 490 552.01 490 560C490 567.32 455 560 420 560C397.73 560 375.45 566.92 375.45 560' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M1240 560C1240 557.36 1250.83 550 1260 550C1265.76 550 1269.86 557.06 1269.86 560C1269.86 562.06 1264.93 560 1260 560C1250 560 1240 562.36 1240 560' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+}
+h1{
+  
+  float: right;
+}
+::selection{
+  background: #1a75ff;
+  color: #fff;
+}
+.wrapper{
+  overflow: hidden;
+  max-width: 390px;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title-text{
+  display: flex;
+  width: 200%;
+}
+.wrapper .title{
+  width: 50%;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.wrapper .slide-controls{
+  position: relative;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0 10px 0;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+}
+.slide-controls .slide{
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+.slide-controls label.signup{
+  color: #000;
+}
+.slide-controls .slider-tab{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  z-index: 0;
+  border-radius: 15px;
+  background: -webkit-linear-gradient(left,#003366,#004080,#0059b3
+, #0073e6);
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+input[type="radio"]{
+  display: none;
+}
+#signup:checked ~ .slider-tab{
+  left: 50%;
+}
+#signup:checked ~ label.signup{
+  color: #fff;
+  cursor: default;
+  user-select: none;
+}
+#signup:checked ~ label.login{
+  color: #000;
+}
+#login:checked ~ label.signup{
+  color: #000;
+}
+#login:checked ~ label.login{
+  cursor: default;
+  user-select: none;
+}
+.wrapper .form-container{
+  width: 100%;
+  overflow: hidden;
+}
+.form-container .form-inner{
+  display: flex;
+  width: 200%;
+}
+.form-container .form-inner form{
+  width: 50%;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.form-inner form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+.form-inner form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  border-radius: 15px;
+  border: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.form-inner form .field input:focus{
+  border-color: #1a75ff;
+  /* box-shadow: inset 0 0 3px #fb6aae; */
+}
+.form-inner form .field input::placeholder{
+  color: #999;
+  transition: all 0.3s ease;
+}
+form .field input:focus::placeholder{
+  color: #1a75ff;
+}
+.form-inner form .pass-link{
+  margin-top: 5px;
+}
+.form-inner form .signup-link{
+  text-align: center;
+  margin-top: 30px;
+}
+.form-inner form .pass-link a,
+.form-inner form .signup-link a{
+  color: #1a75ff;
+  text-decoration: none;
+}
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover{
+  text-decoration: underline;
+}
+form .btn{
+  height: 50px;
+  width: 100%;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .btn-layer{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: -webkit-linear-gradient(right,#003366,#004080,#0059b3
+, #0073e6);
+  border-radius: 15px;
+  transition: all 0.4s ease;;
+}
+form .btn:hover .btn-layer{
+  left: 0;
+}
+form .btn input[type="submit"]{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+      </style>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+      const loginForm = document.querySelector("form.login");
+      const loginBtn = document.querySelector("label.login");
+      const signupBtn = document.querySelector("label.signup");
+      const signupLink = document.querySelector("form .signup-link a");
+      signupBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+      });
+      loginBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+      });
+      signupLink.onclick = (()=>{
+        signupBtn.click();
+        return false;
+      });
+
+      
+       function check(){
+       
+        let email=document.getElementById('email').value;
+        let password=document.getElementById('password').value;
+        if (email == "othiraja@gmail.com"){
+        location.href = "index.html";
+        }
+       else{
+        alert ("Invalid Credentials!!!");
+       }
+    }
+function sigup(){
+  let emid = document.getElementById('sign-email').value;
+  let pwd1 = document.getElementById('sign-pwd1').value;
+  let pwd_check = document.getElementById('sign-pwd1').value;
+  
+  
+}
+      </script>
+</body>
+</html>
